@@ -1,0 +1,24 @@
+{
+  "menu": [
+    {
+      "link": "/",
+      "menu": "CONCEPT"
+    },
+    {
+      "link": "/#about",
+      "menu": "ABOUT"
+    },
+    {
+      "link": "/#howTo",
+      "menu": "HOW TO PLAY"
+    },
+    {
+      "link": "/#play",
+      "menu": "PLAY"
+    },
+    {
+      "link": "/#news",
+      "menu": "NEWS"
+    }
+  ]
+}

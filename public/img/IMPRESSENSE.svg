@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1094" height="176" viewBox="0 0 1094 176">
+  <defs>
+    <filter id="IMPRESSENSE" x="0" y="0" width="1094" height="176" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#IMPRESSENSE)">
+    <text id="IMPRESSENSE-2" data-name="IMPRESSENSE" transform="translate(547 122)" fill="#fff" font-size="116" font-family="AvenirNext-Medium, Avenir Next" font-weight="500" letter-spacing="0.26em"><tspan x="-537.37" y="0">IMPRESSENSE</tspan></text>
+  </g>
+</svg>

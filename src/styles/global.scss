@@ -1,0 +1,412 @@
+@charset "utf-8";
+
+:root {
+  --main: #0d221f;
+  --lett: #07207a;
+  --white: #ffffff;
+
+  --noto-font: "Noto Sans JP", sans-serif;
+}
+
+//futurafont
+@font-face {
+  font-family: "futura";
+  src: url(/font/Futura.ttc);
+}
+
+//フォントウェイト
+.bold {
+  font-weight: 700;
+}
+
+//フォント白
+.white {
+  color: var(--white);
+}
+
+//中央寄せ
+.sec-c {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html {
+  font-size: 62.5%;
+  // scroll-behavior: smooth;
+  // font-size: calc(62.5% + 25 * (100vw - 320px) / 1600);
+  font-size: calc(1rem + ((1vw - 3.2px) * 0.5));
+  // min-height: 0vw;
+  min-height: -webkit-fill-available;
+  @media screen and (max-width: 767px) {
+    font-size: 110%;
+  }
+  @media (max-width: 320px) {
+    font-size: 80%;
+  }
+
+  // 1920px以上は、24pxに
+  @media (min-width: 1921px) {
+    font-size: 160%;
+  }
+}
+
+// ポインター
+.pointer {
+  cursor: pointer;
+}
+
+/* ボタン */
+.button_wrap {
+  line-height: 1;
+  text-align: center;
+}
+
+.button {
+  line-height: 0;
+  position: relative;
+  z-index: 1;
+}
+.button a,
+.button.swiper {
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1;
+  min-width: 150px;
+  padding: 0.7em 4em;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button a:hover,
+.button.swiper:hover {
+  opacity: 0.8;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button.normal {
+  margin-top: 1em;
+}
+.button.normal a {
+  padding: 0.5em 1.2em 0.6em;
+}
+.button.normal a:before {
+  background-color: #ce806f;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.button.normal a:hover {
+  background: #884646;
+}
+
+.button span {
+  display: block;
+  font-size: 0.6em;
+  line-height: 1;
+  margin-top: 0.2em;
+}
+// .button p {
+//   display: block;
+//   font-size: 0.6em;
+//   line-height: 1;
+// }
+.button p br {
+  line-height: 1.3;
+}
+
+.button.circle {
+  border-radius: 6em;
+  display: inline-block;
+  height: 6em;
+  width: 6em;
+}
+.button.circle a {
+  background-color: rgb(41, 41, 41);
+  border-radius: 50%;
+  font-size: 0.6em;
+  min-width: initial;
+  opacity: 0;
+  padding: 0;
+  width: 100%;
+}
+.button.circle a:hover {
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.button.circle a:before {
+  content: "\f105";
+  font-family: "FontAwesome";
+  font-size: 1em;
+  left: 50%;
+  padding-left: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.button.circle a br {
+  line-height: 1.3;
+}
+.radius a,
+.radius.swiper {
+  border-radius: 50px;
+  font-weight: bold;
+  padding: 0.7em 2em;
+}
+.radius a:before,
+.radius.swiper:before {
+  background-color: #ea005a;
+  border-radius: 50px;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+//フォントサイズPc
+.fon1 {
+  @media screen and (min-width: 768px) {
+    font-size: 2.5em;
+  }
+}
+
+.fon2 {
+  @media screen and (min-width: 768px) {
+    font-size: 2.3em;
+  }
+}
+
+.fon3 {
+  @media screen and (min-width: 768px) {
+    font-size: 1em;
+  }
+}
+
+.fon4 {
+  @media screen and (min-width: 768px) {
+    font-size: 0.8em;
+  }
+}
+
+.fon5 {
+  @media screen and (min-width: 768px) {
+    font-size: 0.6em;
+  }
+}
+
+.fon6 {
+  @media screen and (min-width: 768px) {
+    font-size: 0.5em;
+  }
+}
+
+//フォントサイズSp
+
+.fonSp1 {
+  @media screen and (max-width: 767px) {
+    font-size: 2em;
+  }
+}
+
+.fonSp2 {
+  @media screen and (max-width: 767px) {
+    font-size: 1.8em;
+  }
+}
+
+.fonSp3 {
+  @media screen and (max-width: 767px) {
+    font-size: 1.2em;
+  }
+}
+
+.fonSp4 {
+  @media screen and (max-width: 767px) {
+    font-size: 0.8em;
+  }
+}
+
+.fonSp5 {
+  @media screen and (max-width: 767px) {
+    font-size: 0.6em;
+  }
+}
+
+.fonSp6 {
+  @media screen and (max-width: 767px) {
+    font-size: 0.5em;
+  }
+}
+
+body {
+  color: var(--lett);
+  background: -webkit-linear-gradient(top left, #f0edfd, #eaf4f7);
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  width: 100vw;
+  opacity: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+
+  // &.noscroll {
+  //   height: 100vh;
+  //   overflow: hidden;
+  // }
+  // > .inner {
+  //   overflow: hidden;
+  // }
+  // &.active {
+  //   background-color: var(--gl);
+  //   opacity: 1;
+  //   transition: 0.7s;
+  // }
+}
+
+img,
+svg {
+  // width: 100%;
+  // height: 100%;
+}
+
+.section {
+  margin-top: 4em;
+  position: relative;
+  z-index: 1;
+  @media screen and (max-width: 767px) {
+    margin-top: 3em;
+  }
+}
+
+//PCのときのグリッド
+.grid1 {
+  @media screen and (min-width: 768px) {
+    width: 78%;
+  }
+}
+
+.grid2 {
+  @media screen and (min-width: 768px) {
+    width: 84%;
+  }
+}
+
+.grid3 {
+  @media screen and (min-width: 768px) {
+    width: 81%;
+  }
+}
+
+.grid4 {
+  @media screen and (min-width: 768px) {
+    width: 63%;
+  }
+}
+
+//PCのときのグリッド
+.gridSp1 {
+  @media screen and (max-width: 767px) {
+    padding: 0 6%;
+    overflow: hidden;
+  }
+}
+
+.gridSp2 {
+  @media screen and (max-width: 767px) {
+    width: 76%;
+  }
+}
+
+.gridSp3 {
+  @media screen and (max-width: 767px) {
+    width: 61%;
+  }
+}
+
+//改行
+.br {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  display: block;
+}
+
+.brSp {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  display: block;
+}
+
+.svg {
+  position: relative;
+  path {
+    stroke: #6b5c54; /*線*/
+    stroke-width: 5; /*stroke不要は 0*/
+    stroke-linecap: square; /*round角丸、square直角*/
+    animation: svg1 5s ease-in both; /*5sはアニメーション時間5秒*/ /*infiniteはリピート、 1回のみはforwards*/
+  }
+}
+
+@keyframes svg {
+  0% {
+    fill: transparent;
+    stroke-dasharray: 1800; /*細かさ：試しにいろんな数字に置き換えてみてください*/
+    stroke-dashoffset: 1800;
+  }
+  20% {
+    fill: transparent;
+    stroke-dashoffset: 1000; /*アニメーション開始〜1.5秒でstroke書き終える*/
+  }
+}
+
+.svg1 {
+  position: relative;
+  path {
+    stroke: #6b5c54; /*線*/
+    stroke-width: 5; /*stroke不要は 0*/
+    stroke-linecap: square; /*round角丸、square直角*/
+    animation: svg1 5s ease-in both; /*5sはアニメーション時間5秒*/ /*infiniteはリピート、 1回のみはforwards*/
+  }
+}
+
+@keyframes svg1 {
+  0% {
+    fill: transparent;
+    stroke-dasharray: 5500; /*細かさ：試しにいろんな数字に置き換えてみてください*/
+    stroke-dashoffset: 5500;
+  }
+  20% {
+    fill: transparent;
+    stroke-dashoffset: 1000; /*アニメーション開始〜1.5秒でstroke書き終える*/
+  }
+}
+
+// scrollアニメーション
+.int {
+  opacity: 0;
+  transform: translateY(1em);
+  transition: all 0.7s;
+}
+
+.intActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s;
+}
