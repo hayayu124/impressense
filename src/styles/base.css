@@ -1173,6 +1173,28 @@ br {
 .lin-9 {
   line-height: 1.9;
 }
+.lin-10 {
+  line-height: 2.2;
+}
+
+/* セクション間の隙間 */
+.sectionSpace {
+  margin-top: 15em;
+  @media screen and (max-width: 767px) {
+    margin-top: 12em;
+  }
+}
+
+.sectionSpaceM {
+  margin-top: 10em;
+  @media screen and (max-width: 767px) {
+    margin-top: 8em;
+  }
+}
+
+.sectionSpaceS {
+  margin-top: 5em;
+}
 
 .tex-c {
   text-align: center;

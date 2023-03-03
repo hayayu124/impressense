@@ -1,12 +1,12 @@
 import menu from "/json/menu.json";
 const footerMenu = menu.menu;
-export default function Fotter() {
+export default function Footer() {
   return (
     <>
       <footer>
         {footerMenu.map((el, index) => {
           return (
-            <menu>
+            <menu key={`${index}`}>
               <li>{el.menu}</li>
             </menu>
           );

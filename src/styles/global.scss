@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 :root {
-  --main: #0d221f;
   --lett: #07207a;
   --white: #ffffff;
 
@@ -28,6 +27,16 @@
 .sec-c {
   margin-left: auto;
   margin-right: auto;
+}
+
+.left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.right {
+  margin-left: auto;
+  margin-right: 0;
 }
 
 html {
@@ -194,7 +203,7 @@ html {
 
 .fon3 {
   @media screen and (min-width: 768px) {
-    font-size: 1em;
+    font-size: 1.3em;
   }
 }
 

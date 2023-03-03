@@ -4,7 +4,7 @@
 
   .kvLogo {
     width: 64%;
-    margin-top: 15%;
+    margin-top: 12%;
   }
 
   .kvText {
@@ -14,19 +14,186 @@
   .kvImage {
     width: 56%;
   }
+
+  //装飾
+  .kvEllipse {
+    opacity: 50%;
+    width: 72%;
+    filter: blur(2em);
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    z-index: -1;
+  }
+
+  .kvEllipseLeft {
+    opacity: 60%;
+    width: 32%;
+    filter: blur(1em);
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -30%);
+    z-index: -1;
+  }
+
+  .kvEllipseRight {
+    opacity: 40%;
+    width: 32%;
+    filter: blur(1em);
+    top: 0%;
+    right: 0%;
+    transform: translate(50%, -70%);
+    z-index: -1;
+  }
+
+  .kvCharcterLeft {
+    width: 16%;
+    bottom: 0%;
+    left: 0%;
+    transform: translate(50%, -30%);
+    z-index: -1;
+  }
+
+  .kvCharcterRight {
+    width: 16%;
+    bottom: 0%;
+    right: 0%;
+    transform: translate(-50%, -70%);
+    z-index: -1;
+  }
 }
 
 //About
 .aboutText {
   justify-content: center;
+  p {
+    padding: 0 2em;
+  }
 }
 
 .aboutDes {
-  width: 54%;
-  margin-top: 10em;
+  width: 50%;
+  margin-top: 16em;
 }
 
-.aboutDes:nth-child(4) {
-  margin-right: 0;
-  margin-left: auto;
+.charcter3 {
+  width: 24%;
+  bottom: 0%;
+  right: 0%;
+  transform: translate(-10%, -20%);
+}
+
+.charcter4 {
+  width: 24%;
+  bottom: 0%;
+  left: 0%;
+  transform: translate(0%, -20%);
+}
+
+.charcter5 {
+  width: 20%;
+  bottom: -20%;
+  left: 0%;
+  transform: translate(-10%, 20%);
+}
+
+.charcter6 {
+  width: 24%;
+  bottom: 0%;
+  right: 0%;
+  transform: translate(30%, 70%);
+}
+
+.charcter7 {
+  width: 20%;
+  top: 0%;
+  right: 0%;
+  transform: translate(30%, 70%);
+}
+
+.ellipse77 {
+  opacity: 0.4;
+  width: 72%;
+  filter: blur(1em);
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  z-index: -1;
+}
+
+.brain {
+  width: 50%;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.merit {
+  width: 24%;
+}
+
+.meritPic {
+  width: 27%;
+  bottom: 0%;
+}
+
+.meritPic:nth-child(1) {
+  left: 0%;
+}
+
+.meritPic:nth-child(3) {
+  right: 0%;
+}
+
+//ボタン
+.button {
+  opacity: 0.4;
+  background-color: var(--lett);
+  border-radius: 9999em;
+  width: 10em;
+  height: 1.7em;
+  p {
+    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+//ディスクリプション
+.description {
+  .aboutMedia {
+    align-items: center;
+  }
+
+  .descriptionText {
+    width: 40%;
+    margin: 5em 0 0 auto;
+  }
+
+  .howToText {
+    width: 50%;
+  }
+
+  .howToImg {
+    width: 70%;
+  }
+
+  .howToBorder {
+    width: 120%;
+    bottom: -10%;
+    right: 0%;
+    transform: translateX(20%);
+  }
+}
+
+//IMPRESSENSEを使ってみた
+.review {
+  width: 89%;
+
+  .sliderBack {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 1em;
+    padding: 1em;
+  }
 }
