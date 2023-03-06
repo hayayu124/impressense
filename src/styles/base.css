@@ -1177,6 +1177,14 @@ br {
   line-height: 2.2;
 }
 
+/* 文字間隔 */
+.spaSs {
+  letter-spacing: 0.1em;
+}
+.spaS {
+  letter-spacing: 0.3em;
+}
+
 /* セクション間の隙間 */
 .sectionSpace {
   margin-top: 15em;

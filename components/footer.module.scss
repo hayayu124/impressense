@@ -1,0 +1,44 @@
+.footer {
+  width: 64%;
+
+  .charcterRight {
+    width: 29%;
+    top: -30%;
+    right: -36%;
+    z-index: 0;
+  }
+
+  .charcterLeft {
+    width: 16%;
+    left: -30%;
+    bottom: 0%;
+    z-index: 0;
+  }
+
+  .footerColor {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 1em;
+    padding: 1.7em 2.4em;
+  }
+
+  .menuSection {
+    justify-content: space-between;
+  }
+
+  .footerMenu {
+    letter-spacing: 0.1em;
+  }
+
+  .snsMenu {
+    justify-content: right;
+    li:nth-child(1) {
+      margin-right: 1em;
+    }
+  }
+  .siteMenu {
+    justify-content: center;
+    li:nth-child(-n + 2) {
+      margin-right: 2em;
+    }
+  }
+}
