@@ -1,43 +1,60 @@
 .footer {
-  width: 64%;
+  width: 100%;
 
   .charcterRight {
-    width: 29%;
-    top: -30%;
-    right: -36%;
+    width: 16%;
+    top: 0%;
+    right: 0%;
+    transform: translate(0%, -60%);
     z-index: 0;
   }
 
   .charcterLeft {
-    width: 16%;
-    left: -30%;
+    width: 12%;
+    left: 0%;
     bottom: 0%;
+    transform: translate(10%, 0%);
     z-index: 0;
   }
 
   .footerColor {
     background-color: rgba(255, 255, 255, 0.4);
+    width: 64%;
+    overflow: hidden;
     border-radius: 1em;
     padding: 1.7em 2.4em;
+    @media screen and (max-width: 767px) {
+      width: 86%;
+    }
   }
 
   .menuSection {
     justify-content: space-between;
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
   }
 
   .footerMenu {
     letter-spacing: 0.1em;
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
   }
 
   .snsMenu {
     justify-content: right;
-    li:nth-child(1) {
+    @media screen and (max-width: 767px) {
+      justify-content: left;
+    }
+
+    .twitter {
       margin-right: 1em;
     }
   }
   .siteMenu {
     justify-content: center;
-    li:nth-child(-n + 2) {
+    .siteMenuCol:nth-child(-n + 2) {
       margin-right: 2em;
     }
   }

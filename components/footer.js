@@ -10,17 +10,23 @@ export default function Footer() {
           <img src="/img/kvCharcter2.svg" alt="" />
         </div>
 
-        <div className={`${cn.footerColor}`}>
+        <div className={`${cn.footerColor} sec-c`}>
           <div className={`${cn.menuSection} fle-f `}>
             <div className={`${cn.footerMenu} fle-f`}>
               {footerMenu.map((el, index) => {
                 return (
-                  <menu key={`${index} fle-f`}>
-                    <li className={`fon4 pointer avenir`}>
-                      <li className={`fon4`}>
-                        <Link href={el.link}>{el.menu}</Link>
-                        &nbsp;/&nbsp;
-                      </li>
+                  <menu key={`${index}`}>
+                    <li className={`fon4 fonSp4 pointer avenir`}>
+                      <Link href={el.link}>
+                        {/* PCメニュー */}
+                        <ul className={`fon4 br`}>
+                          {el.menu}
+                          &nbsp;/&nbsp;
+                        </ul>
+
+                        {/* SPメニュー */}
+                        <ul className={`fon4 brSp`}>{el.menu}</ul>
+                      </Link>
                     </li>
                   </menu>
                 );
@@ -28,14 +34,14 @@ export default function Footer() {
             </div>
 
             <div className={`${cn.snsColumn}`}>
-              <h3 className={`fon5 avenir regular`}>OFFICIAL SNS</h3>
+              <h3 className={`fon5 fonSp5 avenir regular`}>OFFICIAL SNS</h3>
               <menu className={`${cn.snsMenu} fle-f mar-t05`}>
-                <li>
+                <div className={`${cn.twitter}`}>
                   <img src="/img/twitter.png" alt="" />
-                </li>
-                <li>
+                </div>
+                <div>
                   <img src="/img/youtube.png" alt="" />
-                </li>
+                </div>
               </menu>
             </div>
           </div>
@@ -44,9 +50,13 @@ export default function Footer() {
             <h2 className={`fon4 tex-c avenir regular`}>Link</h2>
 
             <menu className={`${cn.siteMenu} fle-f mar-t05`}>
-              <li className={`fon5`}>プライバシーポリシー</li>
-              <li className={`fon5`}>利用規約</li>
-              <li className={`fon5`}>NTTメディアインテリジェンス研究所</li>
+              <div className={`fon5 ${cn.siteMenuCol}`}>
+                プライバシーポリシー
+              </div>
+              <div className={`fon5 ${cn.siteMenuCol}`}>利用規約</div>
+              <div className={`fon5 ${cn.siteMenuCol}`}>
+                NTTメディアインテリジェンス研究所
+              </div>
             </menu>
           </div>
         </div>
