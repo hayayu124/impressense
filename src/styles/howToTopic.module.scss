@@ -1,0 +1,102 @@
+.howToTopic {
+  width: 100%;
+  height: 100vh;
+}
+
+.textColumn {
+  width: 56%;
+  margin-top: 20vh;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    margin-top: 16vh;
+  }
+}
+
+.textColumnImg {
+  width: 40%;
+  @media screen and (max-width: 767px) {
+    width: 70%;
+    left: 100%;
+    transform: translateX(-0%);
+  }
+  &.three {
+    width: 24%;
+    bottom: 30%;
+    left: 0%;
+    transform: translate(-30%, 0%);
+    @media screen and (max-width: 767px) {
+      width: 32%;
+      left: 100%;
+      bottom: 100%;
+      transform: translate(-70%, 0%);
+    }
+  }
+}
+
+.howToImg {
+  width: 90%;
+  right: 0%;
+  bottom: 0%;
+  transform: translate(0, -40%);
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.howToImgSp {
+  width: 100%;
+  right: 0%;
+  bottom: 0%;
+  transform: translate(0, -50%);
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.twoPageImg {
+  width: 47%;
+  top: 0%;
+  right: 0%;
+  transform: translate(10%, -10%);
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.twoPageImgSp {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.threePageImg {
+  width: 50%;
+  bottom: 30%;
+  right: 0%;
+  transform: translate(10%, 0%);
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+}
+
+.howToBorder {
+  width: 120%;
+  bottom: 0%;
+  right: 0%;
+  transform: translateX(20%);
+}
+
+//装飾
+.charcter7 {
+  width: 20%;
+  top: 0%;
+  right: 0%;
+  transform: translate(30%, 0%);
+  @media screen and (max-width: 767px) {
+    width: 27%;
+    transform: translate(30%, -50%);
+  }
+}

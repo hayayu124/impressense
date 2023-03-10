@@ -4,6 +4,8 @@ import cn from "@/styles/Home.module.scss";
 import Link from "next/link";
 import influencer from "/json/influencer.json";
 import news from "/json/news.json";
+import HowTo from "components/howToTpic.js";
+import NewsSection from "components/news.js";
 const influ = influencer.influencer;
 const newsColumn = news.news;
 
@@ -190,34 +192,18 @@ export default function Home() {
           <div className={`sectionSpace sec-c tex-c pos-r`}>
             <h1 className={`fon2 fonSp2 spaS`}>HOW TO PLAY</h1>
             <p className={`fon4 fonSp4 spaS regular`}>IMPRESSENSEの使い方</p>
-            {/* how to トピック */}
-            <div className={`tex-l mar-t5`}>
-              <h2 className={`fon3 fonSp3 regular spaS`}>自己紹介トピック</h2>
-              <p
-                className={`${cn.howToText} fon4 fonSp4 mar-t2 lin-10 regular`}
-              >
-                遊び方の説明が入ります。遊び方の説明が入ります。遊び方の説明が入ります。遊び方の説明が入ります。遊び方の説明が入ります。遊び方の説明が入ります。遊び方の説明が入ります。遊び方の説明が入ります。
-              </p>
-              <div className={`${cn.howToImg} right mar-t3`}>
-                <img src="/img/Group 3465368.png" alt="" />
-              </div>
-            </div>
-            <div className={`pos-a dropShadow ${cn.charcter7}`}>
-              <img src="/img/kvCharcter7.svg" alt="" />
-            </div>
-            <div className={`pos-a ${cn.howToBorder}`}>
-              <img src="/img/border.png" alt="" />
-            </div>
+
+            <HowTo />
           </div>
         </section>
 
-        <section className={`${cn.review} grid1 left pos-r`}>
+        <section className={`${cn.review} grid1 left pos-r  mar-t5`}>
           {/* 装飾 */}
           <div className={`pos-a ${cn.reviewEllipseLeft}`}>
             <img src="/img/Ellipse 78.svg" alt="" />
           </div>
 
-          <h1 className={`fon2 fonSp2 tex-r mar-t5 spaS`}>
+          <h1 className={`fon2 fonSp2 tex-r spaS`}>
             IMPRESSENSEを
             <br />
             使ってみた
@@ -280,56 +266,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* News */}
-        <aside className={`${cn.news} sectionSpaceM fle-f right`}>
-          <div className={`${cn.verticalTitle}`}>
-            <h1 className={`regular avenir medium`}>NEWS</h1>
-            <p className={`fon4 fonSp4 spaS regular`}>メディアの掲載情報です</p>
-          </div>
-
-          <Swiper
-            slidesPerView={2}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Grid, Pagination]}
-            className={`${cn.newsColumn} mySwiper`}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.3,
-                spaceBetween: 20,
-                row: 1,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                row: 2,
-              },
-            }}
-          >
-            {newsColumn.map((el, index) => {
-              return (
-                <SwiperSlide key={`${index}`} className={`${cn.newsDetail}`}>
-                  <div className={`${cn.newsPic}`}>
-                    <img src={el.pic} alt="" />
-                  </div>
-                  <h3 className={`fon4 fonSp4 lin-10 mar-t1`}>{el.title}</h3>
-
-                  <div
-                    className={`pos-r mar-t1 ${cn.button} 
-                    ${cn.reviewButton}`}
-                  >
-                    <Link href={el.link}>
-                      <p className={`fon5 fonSp5 white regular pos-a`}>
-                        記事を見る
-                      </p>
-                    </Link>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </aside>
+        <NewsSection newsColumn={newsColumn} />
       </main>
       <script src="path/swiper-bundle.min.js"></script>
     </>

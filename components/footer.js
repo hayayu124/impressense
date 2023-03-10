@@ -25,7 +25,7 @@ export default function Footer() {
                         </ul>
 
                         {/* SPメニュー */}
-                        <ul className={`fon4 brSp`}>{el.menu}</ul>
+                        <ul className={`fon4 brSp mar-b1`}>{el.menu}</ul>
                       </Link>
                     </li>
                   </menu>
@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
 
             <div className={`${cn.snsColumn}`}>
-              <h3 className={`fon5 fonSp5 avenir regular`}>OFFICIAL SNS</h3>
+              <h3 className={`fon5 fonSp4 avenir regular`}>OFFICIAL SNS</h3>
               <menu className={`${cn.snsMenu} fle-f mar-t05`}>
                 <div className={`${cn.twitter}`}>
                   <img src="/img/twitter.png" alt="" />
@@ -46,21 +46,21 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className={`mar-t2`}>
-            <h2 className={`fon4 tex-c avenir regular`}>Link</h2>
+          <div className={`${cn.footerLink} mar-t2`}>
+            <h2 className={`fon4 fonSp3 tex-c avenir regular`}>Link</h2>
 
             <menu className={`${cn.siteMenu} fle-f mar-t05`}>
-              <div className={`fon5 ${cn.siteMenuCol}`}>
+              <div className={`fon5 fonSp5 ${cn.siteMenuCol}`}>
                 プライバシーポリシー
               </div>
-              <div className={`fon5 ${cn.siteMenuCol}`}>利用規約</div>
-              <div className={`fon5 ${cn.siteMenuCol}`}>
+              <div className={`fon5 fonSp5 ${cn.siteMenuCol}`}>利用規約</div>
+              <div className={`fon5 fonSp5 ${cn.siteMenuCol}`}>
                 NTTメディアインテリジェンス研究所
               </div>
             </menu>
           </div>
         </div>
-        <p className={`fon5 tex-c mar-t4 mar-b4`}>
+        <p className={`fon5 fonSp5 tex-c mar-t4 mar-b4`}>
           © 2022 日本電信電話株式会社
         </p>
 
