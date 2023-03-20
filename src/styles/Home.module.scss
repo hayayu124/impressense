@@ -40,9 +40,7 @@
     --animation-duration: var(--duration, 800ms);
     --animation-iterations: var(--iterations, 1);
     position: relative;
-
     animation-name: clip-text;
-
     white-space: nowrap;
     cursor: default;
 
@@ -50,12 +48,14 @@
       content: "";
       position: absolute;
       z-index: 999;
+      height: 70%;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
+      opacity: 1;
       background: -webkit-linear-gradient(top left, #7ec9d0, #b8ebdf);
-      transform: scaleX(0.7);
+
       transform-origin: 0 50%;
       pointer-events: none;
       animation-name: text-revealer;
@@ -206,25 +206,31 @@
 
 //About
 .about {
-  height: 500vh;
   @media screen and (max-width: 767px) {
     width: 86%;
     margin-top: 5em;
   }
 
-  .aboutDisplay {
-    width: 100vw;
+  .aboutIndividual {
+    width: 100%;
     height: 100vh;
-    background-color: var(--lett);
-    .aboutIndividual {
-      width: 100%;
-      height: 100%;
-    }
+  }
+}
+
+.topic1 {
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  &.active {
+    opacity: 1;
   }
 }
 
 .aboutText {
   justify-content: center;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
   p {
     padding: 0 1.3em;
     @media screen and (max-width: 767px) {
@@ -233,11 +239,86 @@
   }
 }
 
+.aboutTitle {
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 .aboutDes {
   width: 50%;
+  top: 60%;
+  left: 7%;
+  transform: translate(0, -50%);
   @media screen and (max-width: 767px) {
     width: 100%;
   }
+}
+
+.topic2 {
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0%;
+  &.active {
+    opacity: 1;
+  }
+}
+
+.topic3 {
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0%;
+  &.active {
+    opacity: 1;
+  }
+}
+
+.topic4 {
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0%;
+  &.active {
+    opacity: 1;
+  }
+}
+
+.topic5 {
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 0%;
+  &.active {
+    opacity: 1;
+  }
+}
+
+.aboutDes2 {
+  width: 40%;
+  top: 50%;
+  right: 7%;
+  transform: translate(0, -50%);
+}
+
+.aboutDes3 {
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.aboutDes4 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.aboutDes5 {
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .aboutDesFade,
@@ -265,30 +346,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: -webkit-linear-gradient(top left, #7ec9d0, #b8ebdf);
+    background: -webkit-linear-gradient(top left, #64cff7, #ffb4b4);
     transform: scaleX(0.7);
     transform-origin: 0 50%;
     pointer-events: none;
     animation-name: text-revealer;
-  }
-}
-
-.aboutDes:nth-child(1) {
-  margin-top: 10em;
-}
-
-.aboutDes:nth-child(2) .aboutDes:nth-child(3) {
-  margin-top: 16em;
-  @media screen and (max-width: 767px) {
-    margin-top: 18em;
-  }
-}
-
-.aboutDes:last-child {
-  width: 100%;
-  margin-top: 10em;
-  @media screen and (max-width: 767px) {
-    margin-top: 7em;
   }
 }
 
@@ -335,9 +397,9 @@
 
 .charcter3 {
   width: 24%;
-  top: 0%;
-  right: 0%;
-  transform: translate(0%, 0%);
+  top: 50%;
+  right: 10%;
+
   animation: purun 7s linear 0s infinite;
   @media screen and (max-width: 767px) {
     top: 100%;
@@ -346,9 +408,9 @@
 
 .charcter4 {
   width: 24%;
-  bottom: 0%;
-  left: 0%;
-  transform: translate(0%, 0%);
+  top: 40%;
+  left: 10%;
+
   animation: purun 5s linear 0s infinite;
   @media screen and (max-width: 767px) {
     bottom: 100%;
@@ -357,9 +419,9 @@
 
 .charcter5 {
   width: 20%;
-  bottom: -20%;
+  top: 50%;
   left: 0%;
-  transform: translate(0%, 0%);
+
   animation: purun 6s linear 0s infinite;
   @media screen and (max-width: 767px) {
     width: 30%;
@@ -369,7 +431,7 @@
 
 .charcter6 {
   width: 28%;
-  bottom: 0%;
+  top: 30%;
   right: 0%;
   transform: translate(30%, 70%);
   animation: purupuru2 6s linear 0s infinite;
@@ -379,9 +441,9 @@
   opacity: 0.4;
   width: 72%;
   filter: blur(1em);
-  top: 16%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -36%);
+  transform: translate(-50%, -50%);
   z-index: -1;
 }
 
@@ -397,6 +459,10 @@
 }
 
 .meritColumn {
+  width: 90%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   align-items: center;
   @media screen and (max-width: 767px) {
     flex-direction: column;

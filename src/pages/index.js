@@ -26,45 +26,134 @@ import "swiper/css/pagination";
 // import required modules
 import { Grid, Pagination } from "swiper";
 
-// ロード制御
-
-// const [load, setLoad] = useState(false);
-
-// useEffect(() => {
-//   const body = document.body;
-//   body.classList.toggle("active");
-//   setTimeout(() => {
-//     setLoad(true);
-//   }, 50);
-// }, []);
-
 export default function Home() {
-  //gsap
+  const [activeAbout1, setActiveAbout1] = useState(false);
+  const [activeAbout2, setActiveAbout2] = useState(false);
+  const [activeAbout3, setActiveAbout3] = useState(false);
+  const [activeAbout4, setActiveAbout4] = useState(false);
+  const [activeAbout5, setActiveAbout5] = useState(false);
+
   useEffect(() => {
+    const setAnimation = gsap.context(() => {
+      gsap.to("#aboutDisplay", {
+        // アニメーション内容
+
+        scrollTrigger: {
+          trigger: "#concept",
+          pin: true, // 要素を固定する
+          anticipatePin: 1,
+          pinSpacing: false,
+          markers: true, // マーカー表示
+          start: "top top",
+          end: "bottom bottom",
+        },
+      });
+
+      gsap.to("#about01", {
+        scrollTrigger: {
+          trigger: "#about01",
+          start: "top 50%",
+          end: "bottom 10%",
+          onEnter: (self) => {
+            setActiveAbout1(true);
+          },
+          onLeave: (self) => {
+            setActiveAbout1(false);
+          },
+          onEnterBack: () => {
+            setActiveAbout1(true);
+          },
+          onLeaveBack: () => {
+            setActiveAbout1(false);
+          },
+        },
+      });
+
+      gsap.to("#about02", {
+        scrollTrigger: {
+          trigger: "#about02",
+          start: "top 10%",
+          end: "bottom 10%",
+          onEnter: (self) => {
+            setActiveAbout2(true);
+          },
+          onLeave: (self) => {
+            setActiveAbout2(false);
+          },
+          onEnterBack: () => {
+            setActiveAbout2(true);
+          },
+          onLeaveBack: () => {
+            setActiveAbout2(false);
+          },
+        },
+      });
+
+      gsap.to("#about03", {
+        scrollTrigger: {
+          trigger: "#about03",
+          start: "top 10%",
+          end: "bottom 10%",
+          onEnter: (self) => {
+            setActiveAbout3(true);
+          },
+          onLeave: (self) => {
+            setActiveAbout3(false);
+          },
+          onEnterBack: () => {
+            setActiveAbout3(true);
+          },
+          onLeaveBack: () => {
+            setActiveAbout3(false);
+          },
+        },
+      });
+
+      gsap.to("#about04", {
+        scrollTrigger: {
+          trigger: "#about04",
+          start: "top 10%",
+          end: "bottom 10%",
+          onEnter: (self) => {
+            setActiveAbout4(true);
+          },
+          onLeave: (self) => {
+            setActiveAbout4(false);
+          },
+          onEnterBack: () => {
+            setActiveAbout4(true);
+          },
+          onLeaveBack: () => {
+            setActiveAbout4(false);
+          },
+        },
+      });
+
+      gsap.to("#about05", {
+        scrollTrigger: {
+          trigger: "#about05",
+          start: "top 10%",
+          end: "bottom 10%",
+          onEnter: (self) => {
+            setActiveAbout5(true);
+          },
+
+          onEnterBack: () => {
+            setActiveAbout5(true);
+          },
+          onLeaveBack: () => {
+            setActiveAbout5(false);
+          },
+        },
+      });
+    });
     if (process.browser) {
       gsap.registerPlugin(ScrollTrigger);
-      setAnimation();
     }
+
+    return () => setAnimation.revert();
   }, []);
 
-  const setAnimation = () => {
-    gsap.to("#aboutDisplay", {
-      // アニメーション内容
-
-      opacity: 1,
-
-      scrollTrigger: {
-        trigger: "#concept",
-        pin: true, // 要素を固定する
-        anticipatePin: 1,
-        pinSpacing: false,
-        markers: true, // マーカー表示
-
-        start: "top top",
-        end: "bottom top",
-      },
-    });
-  };
   return (
     <>
       {/* kv */}
@@ -136,171 +225,153 @@ export default function Home() {
           className={`${cn.about} sec-c fon-b sectionSpaceM pad-t2 pos-r`}
         >
           {/* 横スクロール時の表示領域 */}
-          <div id="aboutDisplay" className={`${cn.aboutDisplay} pos-a`}>
-            {/* <div className={`${cn.aboutIndividual} pos-r`}>
-              <ScrollEffect
-                className={`${cn.intDelay} pos-a`}
-                after={cn.intActive}
-              >
-                <div className={`${cn.aboutText} fle-f fon4 fonSp5 spaS ws-n`}>
+          <div id="aboutDisplay" className={`${cn.aboutDisplay}`}>
+            <div
+              id="about01"
+              className={`${cn.aboutIndividual} ${cn.fixedContentsWrap}  pos-r`}
+            >
+              <div className={`${cn.topic1} ${activeAbout1 ? cn.active : ""}`}>
+                <div
+                  className={`${cn.aboutText} fle-f fon4 fonSp5 spaS ws-n pos-a`}
+                >
                   <p>ちがいは個性</p>
                   <p>ちがいは魅力</p>
                   <p>ちがいは多様性</p>
                 </div>
-              </ScrollEffect>
-              <div id="aboutTitle">
-                <h1 className={`fon2 fonSp2 tex-c mar-t05 spaS ws-n`}>
-                  ちがいは、たのしい！
-                </h1>
-              </div>
-              <ScrollEffect className={`${cn.intDelay}`} after={cn.intActive}>
-                <div className={`pos-r`}>
-                  <ScrollEffect
-                    className={`${cn.aboutDes}`}
-                    after={cn.aboutDesFade}
+
+                <div id="aboutTitle" className={`${cn.aboutTitle} pos-a`}>
+                  <h1 className={`fon2 fonSp2 tex-c mar-t05 spaS ws-n`}>
+                    ちがいは、たのしい！
+                  </h1>
+                </div>
+
+                <ScrollEffect
+                  className={`${cn.aboutDes}`}
+                  after={cn.aboutDesFade}
+                >
+                  <h2 className={`fon3 fonSp3 lin-10`}>
+                    誰もがソーシャルメディアで自分を発信できる現代。
+                    世界中の人々からの自分の評価はほんの数秒で決まり、第一印象＝その人のイメージとなってしまいます。
+                  </h2>
+                </ScrollEffect>
+
+                <ScrollEffect
+                  className={`${cn.intMostDelay}`}
+                  after={cn.intActive}
+                >
+                  <div
+                    className={`${cn.charcter3} pos-a dropShadow dropShadow`}
                   >
-                    <h2 className={`fon3 fonSp3 lin-10`}>
-                      誰もがソーシャルメディアで自分を発信できる現代。
-                      世界中の人々からの自分の評価はほんの数秒で決まり、第一印象＝その人のイメージとなってしまいます。
+                    <img src="/img/kvCharcter3.svg" alt="" />
+                  </div>
+                </ScrollEffect>
+              </div>
+
+              {/* 2個目のトピック */}
+              <div
+                className={`${cn.topic2} ${
+                  activeAbout2 ? cn.active : ""
+                } pos-a`}
+              >
+                <ScrollEffect
+                  className={`${cn.aboutDes2} right pos-a`}
+                  after={cn.aboutDesFade}
+                >
+                  <h2 className={`fon3 fonSp3 lin-10`}>
+                    人と比べるのではなく、ちがいがあることを楽しみ、自信をつけてもらいたい。他の人の自分とは異なる部分を受け入れ、相互理解を深めていけるそんな世界を目指して生まれました。
+                  </h2>
+                </ScrollEffect>
+
+                <div className={`${cn.charcter4} pos-a dropShadow`}>
+                  <img src="/img/kvCharcter4.svg" alt="" />
+                </div>
+              </div>
+
+              {/* 3個目のトピック */}
+              <div
+                className={`${cn.topic3} ${
+                  activeAbout3 ? cn.active : ""
+                } pos-a`}
+              >
+                <h2 className={`fon3 fonSp3 lin-10 ${cn.aboutDes3} pos-a`}>
+                  IMPRESSENSEを通じて自分を知り、他の人との違いを発見することで、”みんな同じではなくちがうからこそたのしい”ということに気づいてもらえたら嬉しいです。
+                </h2>
+
+                <ScrollEffect
+                  className={`${cn.intMoreDelay}`}
+                  after={cn.intActive}
+                >
+                  <div className={`${cn.charcter5} pos-a dropShadow`}>
+                    <img src="/img/kvCharcter5.svg" alt="" />
+                  </div>
+                </ScrollEffect>
+
+                <ScrollEffect
+                  className={`${cn.intMostDelay}`}
+                  after={cn.intActive}
+                >
+                  <div className={`${cn.charcter6} pos-a dropShadow`}>
+                    <img src="/img/kvCharcter6.svg" alt="" />
+                  </div>
+                </ScrollEffect>
+              </div>
+
+              {/* 4個目のトピック */}
+              <div
+                className={`${cn.topic4} ${
+                  activeAbout4 ? cn.active : ""
+                } pos-a`}
+              >
+                <div className={`${cn.aboutDes4} pos-a`}>
+                  <ScrollEffect
+                    className={`${cn.aboutDesTi} sec-c`}
+                    after={cn.aboutDesTiDe}
+                  >
+                    <h2 className={`fon3 fonSp3 sec-c tex-c lin-10`}>
+                      創造しよう。
                     </h2>
                   </ScrollEffect>
-
                   <ScrollEffect
-                    className={`${cn.intMostDelay}`}
-                    after={cn.intActive}
+                    className={`${cn.aboutDesTi} mar-t05 sec-c`}
+                    after={cn.aboutDesTiDe}
                   >
-                    <div
-                      className={`${cn.charcter3} pos-a dropShadow dropShadow`}
-                    >
-                      <img src="/img/kvCharcter3.svg" alt="" />
-                    </div>
+                    <h2 className={`fon3 fonSp3 sec-c tex-c lin-10`}>
+                      誰もがぞれぞれの違いを楽しみ、認め合うことで、
+                    </h2>
                   </ScrollEffect>
-                </div>
-              </ScrollEffect>
-            </div>
-
-            <div className={`${cn.aboutIndividual} pos-r`}>
-              <div className={`pos-a`}>
-                <ScrollEffect className={`${cn.intDelay}`} after={cn.intActive}>
-                  <div className={`pos-r`}>
-                    <ScrollEffect
-                      className={`${cn.aboutDes} right`}
-                      after={cn.aboutDesFade}
-                    >
-                      <h2 className={`fon3 fonSp3 lin-10`}>
-                        人と比べるのではなく、ちがいがあることを楽しみ、自信をつけてもらいたい。他の人の自分とは異なる部分を受け入れ、相互理解を深めていけるそんな世界を目指して生まれました。
-                      </h2>
-                    </ScrollEffect>
-
-                    <ScrollEffect
-                      className={`${cn.intMostDelay}`}
-                      after={cn.intActive}
-                    >
-                      <div className={`${cn.charcter4} pos-a dropShadow`}>
-                        <img src="/img/kvCharcter4.svg" alt="" />
-                      </div>
-                    </ScrollEffect>
-                  </div>
-                </ScrollEffect>
-              </div>
-            </div>
-
-            <div className={`${cn.aboutIndividual} pos-r`}>
-              <div className={`pos-a`}>
-                <ScrollEffect className={`${cn.intDelay}`} after={cn.intActive}>
-                  <div className={`pos-r`}>
-                    <ScrollEffect
-                      className={`${cn.aboutDes} sec-c`}
-                      after={cn.aboutDesFade}
-                    >
-                      <h2 className={`fon3 fonSp3 sec-c lin-10`}>
-                        IMPRESSENSEを通じて自分を知り、他の人との違いを発見することで、”みんな同じではなくちがうからこそたのしい”ということに気づいてもらえたら嬉しいです。
-                      </h2>
-                    </ScrollEffect>
-
-                    <ScrollEffect
-                      className={`${cn.intMoreDelay}`}
-                      after={cn.intActive}
-                    >
-                      <div className={`${cn.charcter5} pos-a dropShadow`}>
-                        <img src="/img/kvCharcter5.svg" alt="" />
-                      </div>
-                    </ScrollEffect>
-
-                    <ScrollEffect
-                      className={`${cn.intMostDelay}`}
-                      after={cn.intActive}
-                    >
-                      <div className={`${cn.charcter6} pos-a dropShadow`}>
-                        <img src="/img/kvCharcter6.svg" alt="" />
-                      </div>
-                    </ScrollEffect>
-                  </div>
-                </ScrollEffect>
-              </div>
-            </div>
-
-            <div className={`${cn.aboutIndividual} pos-r`}>
-              <div className={`pos-a`}>
-                <ScrollEffect
-                  className={`${cn.aboutDesTi} sectionSpace sec-c`}
-                  after={cn.aboutDesTiDe}
-                >
-                  <h2 className={`fon3 fonSp3 sec-c tex-c lin-10`}>
-                    創造しよう。
-                  </h2>
-                </ScrollEffect>
-                <ScrollEffect
-                  className={`${cn.aboutDesTi} mar-t05 sec-c`}
-                  after={cn.aboutDesTiDe}
-                >
-                  <h2 className={`fon3 fonSp3 sec-c tex-c lin-10`}>
-                    誰もがぞれぞれの違いを楽しみ、認め合うことで、
-                  </h2>
-                </ScrollEffect>
-                <ScrollEffect
-                  className={`${cn.aboutDesTi} mar-t05 sec-c`}
-                  after={cn.aboutDesTiDe}
-                >
-                  <h2 className={`fon3 fonSp3 sec-c tex-c lin-10`}>
-                    自信に溢れ生き生きと生活する社会を。
-                  </h2>
-                </ScrollEffect>
-              </div>
-            </div>
-
-            <div className={`${cn.aboutIndividual} pos-r`}>
-              <div className={`pos-a`}>
-                <div id="about" className={`pos-r`}>
-                  <div className={`${cn.ellipse77} pos-a`}>
-                    <ScrollEffect
-                      className={`${cn.circle}`}
-                      after={cn.intActive}
-                    >
-                      <img src="/img/Ellipse 77.svg" alt="" />
-                    </ScrollEffect>
-                  </div>
-
                   <ScrollEffect
-                    className={`${cn.intDelay}`}
-                    after={cn.intActive}
+                    className={`${cn.aboutDesTi} mar-t05 sec-c`}
+                    after={cn.aboutDesTiDe}
                   >
-                    <h2
-                      className={`${cn.aboutDes} fon2 fonSp2 sec-c tex-c spaS lin-7 pad-t1`}
-                    >
-                      あなたの
-                      <br />
-                      ”魅力”と”個性” <br />
-                      を発見
+                    <h2 className={`fon3 fonSp3 sec-c tex-c lin-10`}>
+                      自信に溢れ生き生きと生活する社会を。
                     </h2>
                   </ScrollEffect>
                 </div>
               </div>
-            </div>
 
-            <div className={`${cn.aboutIndividual} pos-r`}>
-              <div className={`pos-a`}>
-                <div className={`fle-f mar-t4 pos-r ${cn.meritColumn}`}>
+              {/* 5個目のトピック */}
+              <div
+                className={`${cn.topic5} ${
+                  activeAbout5 ? cn.active : ""
+                } pos-a`}
+              >
+                <div className={`${cn.ellipse77} pos-a`}>
+                  <ScrollEffect className={`${cn.circle}`} after={cn.intActive}>
+                    <img src="/img/Ellipse 77.svg" alt="" />
+                  </ScrollEffect>
+                </div>
+
+                <h2
+                  className={`${cn.aboutDes5}  pos-a fon2 fonSp2 sec-c tex-c spaS lin-7 pad-t1`}
+                >
+                  あなたの
+                  <br />
+                  ”魅力”と”個性” <br />
+                  を発見
+                </h2>
+
+                <div className={`fle-f mar-t4 pos-r ${cn.meritColumn} pos-a`}>
                   <ScrollEffect
                     className={`${cn.intMostDelay} ${cn.meritPic1}`}
                     after={cn.intActive}
@@ -332,11 +403,25 @@ export default function Home() {
                   </ScrollEffect>
                 </div>
               </div>
-            </div> */}
+            </div>
+
+            <div id="about02" className={`${cn.aboutIndividual} pos-r`}></div>
+
+            <div id="about03" className={`${cn.aboutIndividual} pos-r`}></div>
+
+            <div id="about04" className={`${cn.aboutIndividual} pos-r`}></div>
+
+            <div id="about05" className={`${cn.aboutIndividual} pos-r`}></div>
+
+            <div id="blank" className={`${cn.aboutIndividual} pos-r`}></div>
           </div>
         </section>
 
-        <section className={`${cn.description} sectionSpace grid1 sec-c pos-r`}>
+        {/* 説明 */}
+        <section
+          id="description"
+          className={`${cn.description} sectionSpace grid1 sec-c pos-r`}
+        >
           <ScrollEffect>
             <ScrollEffect className={`${cn.intDelay}`} after={cn.intActive}>
               <h1
