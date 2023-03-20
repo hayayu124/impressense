@@ -1,0 +1,104 @@
+.header {
+  width: 100vw;
+  position: fixed;
+  z-index: 3;
+  height: 3em;
+  // overflow-x: hidden;
+  // overflow-y: auto;
+}
+
+.headerColumn {
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 10em;
+}
+
+.headerMenu {
+  @media screen and (min-width: 768px) {
+    display: flex !important;
+  }
+  p {
+    margin-left: 1.7em;
+  }
+}
+
+//ハンバーガーメニュー
+.humburgerbutton {
+  z-index: 9999;
+  .humburgerBorder {
+    background-color: var(--white);
+    width: 1.9em;
+    height: 2px;
+  }
+  .humburgerBorder:nth-child(-n + 2) {
+    margin-bottom: 7px;
+  }
+  &.active {
+    margin-top: 0.5em;
+
+    .humburgerBorder:nth-child(1) {
+      transform: translateY(4px) rotate(-45deg);
+      transition-duration: 0.3;
+    }
+    .humburgerBorder:nth-child(2) {
+      display: none;
+      opacity: 0;
+    }
+    .humburgerBorder:nth-child(3) {
+      transform: translateY(-4px) rotate(45deg);
+      transition-duration: 0.3s;
+    }
+  }
+}
+
+.humburgerColumn {
+  transform: translateX(130%);
+  transition-duration: 0.3s;
+  overflow: visible;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  top: 0%;
+  &.active {
+    transform: translateX(0%);
+    transition-duration: 0.3s;
+  }
+
+  .humburgerBack {
+    width: 400vw;
+    height: 400vw;
+    transform: translateX(130%);
+    transition-duration: 0.3s;
+    display: block;
+    opacity: 1;
+    filter: blur(1em);
+    height: 100%;
+    top: 0%;
+    z-index: -1;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.active {
+      transform: translateX(-50%);
+      transition-duration: 0.3s;
+    }
+  }
+
+  .humburgerMenuContents {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    p {
+      margin-top: 1.7em;
+    }
+    &.active {
+      transform: translateX(-100%);
+      transition-duration: 0.3s;
+    }
+  }
+}

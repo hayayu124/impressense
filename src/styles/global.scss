@@ -292,22 +292,18 @@ body {
   font-weight: 300;
   width: 100vw;
   opacity: 1;
-  overflow-x: hidden;
-  overflow-y: auto;
   position: relative;
 
-  // &.noscroll {
-  //   height: 100vh;
-  //   overflow: hidden;
-  // }
-  // > .inner {
-  //   overflow: hidden;
-  // }
-  // &.active {
-  //   background-color: var(--gl);
-  //   opacity: 1;
-  //   transition: 0.7s;
-  // }
+  &.noscroll {
+    height: 100vh;
+  }
+  > .inner {
+    overflow: hidden;
+  }
+  &.active {
+    opacity: 1;
+    transition: 0.7s;
+  }
 }
 
 img,
@@ -440,4 +436,12 @@ svg {
   opacity: 1;
   transform: translateY(0);
   transition: all 0.3s;
+}
+
+.side-scroll-list-wrapper {
+  height: 300vh;
+}
+
+#aboutTitle {
+  opacity: 0;
 }

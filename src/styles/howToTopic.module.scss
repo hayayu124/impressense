@@ -1,84 +1,286 @@
 .howToTopic {
   width: 100%;
   height: 100vh;
+  max-height: 1300px;
 }
 
 .textColumn {
-  width: 56%;
-  margin-top: 20vh;
+  width: 42%;
+  top: 30%;
+  left: 0%;
+  transform: translate(0%, -50%);
   @media screen and (max-width: 767px) {
     width: 100%;
-    margin-top: 16vh;
+    top: 30%;
+  }
+  &.twoTopic {
+    top: 50%;
+    @media screen and (max-width: 767px) {
+      top: 40%;
+    }
+  }
+  &.threeTopic {
+    top: 30%;
   }
 }
 
 .textColumnImg {
-  width: 40%;
+  width: 80%;
   @media screen and (max-width: 767px) {
     width: 70%;
     left: 100%;
     transform: translateX(-0%);
   }
+
+  &.two {
+    @media screen and (max-width: 767px) {
+      width: 50%;
+      left: 100%;
+      margin-top: 1.5em;
+    }
+  }
+
   &.three {
-    width: 24%;
-    bottom: 30%;
+    width: 32%;
+    top: 50%;
     left: 0%;
     transform: translate(-30%, 0%);
     @media screen and (max-width: 767px) {
       width: 32%;
-      left: 100%;
-      bottom: 100%;
-      transform: translate(-70%, 0%);
+      left: 80%;
+      top: 0%;
+    }
+
+    animation: purupuru 6s linear 0s infinite;
+  }
+}
+
+.howToImgColumn {
+  width: 90%;
+  right: 0%;
+  top: 60%;
+  transform: translate(0, -50%);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    top: 80%;
+  }
+
+  .howToImg {
+    opacity: 0;
+    width: 18.5%;
+    transform: translateY(1em);
+    transition: all 0.3s;
+    @media screen and (max-width: 767px) {
+      width: 47%;
+      margin-bottom: 0.3em;
+    }
+  }
+
+  .howToImg:nth-child(1) {
+    &.intActive {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0s;
+    }
+  }
+
+  .howToImg:nth-child(2) {
+    &.intActive {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.05s;
+    }
+  }
+
+  .howToImg:nth-child(3) {
+    &.intActive {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.1s;
+    }
+  }
+
+  .howToImg:nth-child(4) {
+    &.intActive {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.15s;
+    }
+  }
+
+  .howToImg:nth-child(5) {
+    &.intActive {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.2s;
+    }
+  }
+
+  .howToImg:nth-child(6) {
+    &.intActive {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.25s;
+    }
+  }
+
+  .howToImg:nth-child(7) {
+    &.intActive {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.3s;
+    }
+  }
+
+  .howToImg:nth-child(8) {
+    &.intActive {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.35s;
+    }
+  }
+
+  .howToImg:nth-child(9) {
+    &.intActive {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.4s;
+    }
+  }
+
+  .howToImg:nth-child(10) {
+    &.intActive {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.45s;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .howToImg:nth-child(n + 6) {
+      margin-top: 0.3em;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .howToImg:nth-child(n + 3) {
+      margin-top: 0.5em;
+    }
+  }
+
+  .howToImg:nth-child(8) {
+    width: 22%;
+    @media screen and (max-width: 767px) {
+      width: 47%;
     }
   }
 }
 
-.howToImg {
-  width: 90%;
-  right: 0%;
-  bottom: 0%;
-  transform: translate(0, -40%);
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-}
-
-.howToImgSp {
+.howToImgColumnSp {
   width: 100%;
   right: 0%;
-  bottom: 0%;
+  top: 70%;
   transform: translate(0, -50%);
   @media screen and (min-width: 768px) {
     display: none;
   }
 }
 
-.twoPageImg {
-  width: 47%;
-  top: 0%;
-  right: 0%;
-  transform: translate(10%, -10%);
-  @media screen and (max-width: 767px) {
-    display: none;
+.twoPageImgColumn {
+  .twoPageImg:nth-child(1) {
+    opacity: 0;
+    transition: all 0.3s;
+    width: 40%;
+    top: 30%;
+    right: 0%;
+    transform: translate(0%, -44%);
+    z-index: 2;
+    &.intActive {
+      opacity: 1;
+      transform: translate(0%, -50%);
+      transition-delay: 0s;
+    }
+    @media screen and (max-width: 767px) {
+      top: 78%;
+      left: 0%;
+      transform: translate(0%, 0%);
+    }
   }
-}
-
-.twoPageImgSp {
-  @media screen and (min-width: 768px) {
-    display: none;
+  .twoPageImg:nth-child(2) {
+    opacity: 0;
+    transition: all 0.3s;
+    width: 48%;
+    top: 45%;
+    right: 0%;
+    transform: translate(30%, -44%);
+    z-index: 7;
+    &.intActive {
+      opacity: 1;
+      transform: translate(30%, -50%);
+      transition-delay: 0.1s;
+    }
+    @media screen and (max-width: 767px) {
+      width: 56%;
+      top: 83%;
+      left: 7%;
+      transform: translate(0%, 0%);
+    }
+  }
+  .twoPageImg:nth-child(3) {
+    opacity: 0;
+    transition: all 0.3s;
+    width: 30%;
+    top: 60%;
+    right: 0%;
+    transform: translate(30%, -44%);
+    z-index: 3;
+    &.intActive {
+      opacity: 1;
+      transform: translate(30%, -50%);
+      transition-delay: 0.2s;
+    }
+    @media screen and (max-width: 767px) {
+      width: 36%;
+      top: 78%;
+      left: 45%;
+      transform: translate(0%, 0%);
+    }
+  }
+  .twoPageImg:nth-child(4) {
+    opacity: 0;
+    transition: all 0.3s;
+    width: 36%;
+    top: 70%;
+    right: 0%;
+    transform: translate(10%, -44%);
+    z-index: 1;
+    &.intActive {
+      opacity: 1;
+      transform: translate(10%, -50%);
+      transition-delay: 0.3s;
+    }
+    @media screen and (max-width: 767px) {
+      width: 36%;
+      top: 83%;
+      right: 0%;
+      transform: translate(0%, 0%);
+    }
   }
 }
 
 .threePageImg {
-  width: 50%;
-  bottom: 30%;
+  width: 72%;
+  top: 60%;
   right: 0%;
-  transform: translate(10%, 0%);
+  transform: translate(10%, -50%);
   @media screen and (max-width: 767px) {
     width: 100%;
-    bottom: 30%;
+    top: 70%;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -92,11 +294,54 @@
 //装飾
 .charcter7 {
   width: 20%;
-  top: 0%;
+  top: 20%;
   right: 0%;
   transform: translate(30%, 0%);
+  animation: purun 6s linear 0s infinite;
   @media screen and (max-width: 767px) {
     width: 27%;
-    transform: translate(30%, -50%);
+    top: 10%;
+  }
+}
+
+@keyframes purun {
+  0% {
+    transform: scale(1, 1) translate(30%, 0%);
+  }
+  2% {
+    transform: scale(0.9, 0.9) translate(30%, 4%);
+  }
+  4% {
+    transform: scale(1.3, 0.8) translate(30%, 7%);
+  }
+  6% {
+    transform: scale(0.8, 1.3) translate(30%, -5%);
+  }
+  8% {
+    transform: scale(1.1, 0.9) translate(30%, 3%);
+  }
+  10% {
+    transform: scale(1, 1) translate(30%, 0%);
+  }
+}
+
+@keyframes purupuru {
+  0% {
+    transform: scale(1, 1) translateX(-30%, 0%);
+  }
+  2% {
+    transform: scale(1, 1.06) translate(-30%, -4%) skew(6deg, 0deg);
+  }
+  4% {
+    transform: scale(1, 0.94) translate(-30%, 4%) skew(-6deg, 0deg);
+  }
+  6% {
+    transform: scale(1, 1.03) translate(-30%, -2%) skew(-3deg, 0deg);
+  }
+  8% {
+    transform: scale(1, 0.97) translate(-30%, 2%) skew(3deg, 0deg);
+  }
+  10% {
+    transform: scale(1, 1) translate(-30%, 0%);
   }
 }

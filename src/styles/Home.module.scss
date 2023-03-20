@@ -2,8 +2,10 @@
   width: 100vw;
   height: 100vh;
   min-height: 1000px;
+
   @media screen and (max-width: 767px) {
     min-height: 300px;
+    overflow: hidden;
   }
 
   .kvContents {
@@ -21,7 +23,78 @@
     width: 64%;
     @media screen and (max-width: 767px) {
       width: 100%;
-      margin-bottom: 1em;
+    }
+  }
+
+  .kvLogo,
+  .kvLogo::after {
+    animation-delay: var(--animation-delay, 2s);
+    animation-iteration-count: var(--iterations, 1);
+    animation-duration: var(--duration, 800ms);
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .kvLogo {
+    --animation-delay: var(--delay, 0);
+    --animation-duration: var(--duration, 800ms);
+    --animation-iterations: var(--iterations, 1);
+    position: relative;
+
+    animation-name: clip-text;
+
+    white-space: nowrap;
+    cursor: default;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: -webkit-linear-gradient(top left, #7ec9d0, #b8ebdf);
+      transform: scaleX(0.7);
+      transform-origin: 0 50%;
+      pointer-events: none;
+      animation-name: text-revealer;
+    }
+  }
+
+  .kvText,
+  .kvText::after {
+    display: inline;
+    animation-delay: var(--animation-delay, 1s);
+    animation-iteration-count: var(--iterations, 1);
+    animation-duration: var(--duration, 700ms);
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .kvText {
+    word-break: break-word;
+    --animation-delay: var(--delay, 0.5s);
+    --animation-duration: var(--duration, 800ms);
+    --animation-iterations: var(--iterations, 1);
+    position: relative;
+    animation-name: clip-text;
+    white-space: nowrap;
+    cursor: default;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: -webkit-linear-gradient(top left, #7ec9d0, #b8ebdf);
+      transform: scaleX(0.7);
+      transform-origin: 0 50%;
+      pointer-events: none;
+      animation-name: text-revealer;
     }
   }
 
@@ -29,19 +102,21 @@
     width: 56%;
     @media screen and (max-width: 767px) {
       width: 100%;
-      margin-top: 9em;
+      margin-top: 7em;
     }
   }
 
   //装飾
   .kvEllipse {
     opacity: 70%;
-    width: 70%;
+    width: 90%;
     filter: blur(2em);
     top: 40%;
     left: 50%;
     transform: translate(-50%, -70%);
     z-index: -1;
+    animation: scal 20s ease 0s; /*アニメーションの設定*/
+    transform-origin: center;
     @media screen and (max-width: 767px) {
       width: 150%;
       top: 0%;
@@ -53,11 +128,15 @@
   .kvEllipseLeft {
     opacity: 60%;
     width: 32%;
-    filter: blur(1em);
+    height: 32%;
+    filter: blur(0.7em);
     top: 50%;
     left: 0%;
     transform: translate(-50%, -30%);
     z-index: -1;
+
+    background: -webkit-linear-gradient(top left, #7ec9d0, #b8ebdf); /*背景色*/
+    animation: fluidrotate 10s ease 0s infinite; /*アニメーションの設定*/
   }
 
   .kvEllipseRight {
@@ -82,11 +161,11 @@
     left: 0%;
     transform: translate(50%, 0%);
     z-index: -1;
+    animation: purupuru 5s linear 0s infinite;
     @media screen and (max-width: 767px) {
       width: 20%;
       top: 36%;
-      left: 10%;
-      transform: translate(-50%, 0%);
+      left: 3%;
     }
   }
 
@@ -94,24 +173,28 @@
     width: 16%;
     top: 50%;
     right: 0%;
-    transform: translate(-50%, 0%);
+    transform: translate(0%, 0%);
     z-index: -1;
+    animation: purun 5s linear 1s infinite;
     @media screen and (max-width: 767px) {
       width: 24%;
-      top: 42%;
-      right: -10%;
-      transform: translate(-50%, 0%);
+      top: 40%;
+      right: 0%;
     }
   }
 
   .kvEllipseBottom {
-    opacity: 30%;
+    opacity: 32%;
     width: 48%;
-    filter: blur(1em);
-    bottom: -10%;
+    height: 48%;
+    filter: blur(0.7em);
+    bottom: 0%;
     right: 0%;
     transform: translate(40%, 20%);
     z-index: -1;
+    background: -webkit-linear-gradient(top left, #a0e09e, #b8ebdf); /*背景色*/
+    animation: fluidrotate 20s ease 0s infinite; /*アニメーションの設定*/
+
     @media screen and (max-width: 767px) {
       width: 70%;
       bottom: 0%;
@@ -123,9 +206,20 @@
 
 //About
 .about {
+  height: 500vh;
   @media screen and (max-width: 767px) {
     width: 86%;
     margin-top: 5em;
+  }
+
+  .aboutDisplay {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--lett);
+    .aboutIndividual {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -146,6 +240,39 @@
   }
 }
 
+.aboutDesFade,
+.aboutDesFade::after {
+  animation-delay: var(--animation-delay, 1s);
+  animation-iteration-count: var(--iterations, 1);
+  animation-duration: var(--duration, 700ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.aboutDesFade {
+  --animation-delay: var(--delay, 0.5s);
+  --animation-duration: var(--duration, 800ms);
+  --animation-iterations: var(--iterations, 1);
+  position: relative;
+  animation-name: clip-text;
+  cursor: default;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(top left, #7ec9d0, #b8ebdf);
+    transform: scaleX(0.7);
+    transform-origin: 0 50%;
+    pointer-events: none;
+    animation-name: text-revealer;
+  }
+}
+
 .aboutDes:nth-child(1) {
   margin-top: 10em;
 }
@@ -158,6 +285,7 @@
 }
 
 .aboutDes:last-child {
+  width: 100%;
   margin-top: 10em;
   @media screen and (max-width: 767px) {
     margin-top: 7em;
@@ -165,10 +293,43 @@
 }
 
 .aboutDesTi {
-  width: 100%;
-  margin-top: 16em;
-  @media screen and (max-width: 767px) {
-    margin-top: 10em;
+  opacity: 0;
+}
+
+.aboutDesTiDe,
+.aboutDesTiDe::after {
+  opacity: 1;
+  animation-delay: var(--animation-delay, 1s);
+  animation-iteration-count: var(--iterations, 1);
+  animation-duration: var(--duration, 700ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.aboutDesTiDe {
+  width: -moz-fit-content; /* Firefox */
+  width: fit-content; /* other browsers */
+  --animation-delay: var(--delay, 0s);
+  --animation-duration: var(--duration, 700ms);
+  --animation-iterations: var(--iterations, 1);
+  position: relative;
+  animation-name: clip-text;
+  white-space: nowrap;
+  cursor: default;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(top left, #7ec9d0, #b8ebdf);
+    transform: scaleX(0.7);
+    transform-origin: 0 50%;
+    pointer-events: none;
+    animation-name: text-revealer;
   }
 }
 
@@ -176,7 +337,8 @@
   width: 24%;
   top: 0%;
   right: 0%;
-  transform: translate(-10%, 0%);
+  transform: translate(0%, 0%);
+  animation: purun 7s linear 0s infinite;
   @media screen and (max-width: 767px) {
     top: 100%;
   }
@@ -186,7 +348,8 @@
   width: 24%;
   bottom: 0%;
   left: 0%;
-  transform: translate(0%, -20%);
+  transform: translate(0%, 0%);
+  animation: purun 5s linear 0s infinite;
   @media screen and (max-width: 767px) {
     bottom: 100%;
   }
@@ -196,7 +359,8 @@
   width: 20%;
   bottom: -20%;
   left: 0%;
-  transform: translate(-10%, 20%);
+  transform: translate(0%, 0%);
+  animation: purun 6s linear 0s infinite;
   @media screen and (max-width: 767px) {
     width: 30%;
     bottom: 120%;
@@ -208,13 +372,14 @@
   bottom: 0%;
   right: 0%;
   transform: translate(30%, 70%);
+  animation: purupuru2 6s linear 0s infinite;
 }
 
 .ellipse77 {
   opacity: 0.4;
   width: 72%;
   filter: blur(1em);
-  top: 0%;
+  top: 16%;
   left: 50%;
   transform: translate(-50%, -36%);
   z-index: -1;
@@ -225,6 +390,10 @@
   top: 0%;
   left: 50%;
   transform: translate(-50%, 0%);
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    top: 20%;
+  }
 }
 
 .meritColumn {
@@ -262,7 +431,7 @@
 .meritPic2 {
   right: 0%;
   @media screen and (max-width: 767px) {
-    margin: 2em 0 0 auto;
+    margin: 1.5em 0 0 auto;
     order: 3;
   }
 }
@@ -292,6 +461,11 @@
       margin-top: 1.5em;
     }
   }
+}
+
+.button:hover {
+  opacity: 0.7;
+  transition-duration: 0.3s;
 }
 
 //ディスクリプション
@@ -357,5 +531,220 @@
     bottom: -10%;
     right: -10%;
     z-index: 0;
+  }
+}
+
+//スクロールエフェクト
+.intDelay {
+  opacity: 0;
+  transform: translateY(1em);
+  transition: all 0.3s;
+  &.intActive {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+  }
+  &.intNewsActive {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+  &.intCollectionActive {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+    transition-duration: 0.7s;
+  }
+}
+
+.intMoreDelay {
+  opacity: 0;
+  transition: all 0.5s;
+
+  &.intActive {
+    opacity: 1;
+    transition-delay: 0.3s;
+  }
+  &.intCollectionActive {
+    opacity: 1;
+    transition-delay: 0.7s;
+    transition-duration: 1.2s;
+  }
+}
+
+.intMostDelay {
+  opacity: 0;
+  transition-delay: all 0.7s;
+
+  &.intActive {
+    opacity: 1;
+    transition-delay: 0.3s;
+    transition-duration: 1.5s;
+  }
+  &.intCollectionActive {
+    opacity: 1;
+    transition-delay: 0.5s;
+    transition-duration: 1.5s;
+  }
+}
+
+.circle {
+  opacity: 0;
+  scale: 0;
+
+  &.intActive {
+    opacity: 1;
+    transition-delay: 0.3s;
+    transition-duration: 1s;
+    scale: 1.2;
+  }
+}
+
+//文字アニメーション
+@keyframes clip-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes text-revealer {
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+//流体アニメーション
+@keyframes fluidrotate {
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  }
+  14% {
+    border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+  }
+  28% {
+    border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+  }
+  42% {
+    border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+  }
+  56% {
+    border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+  }
+  70% {
+    border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+  }
+  84% {
+    border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+  }
+}
+
+@keyframes scal {
+  0% {
+    width: 64%;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes purun {
+  0% {
+    transform: scale(1, 1) translateY(0%);
+    @media screen and (max-width: 767px) {
+    }
+  }
+  2% {
+    transform: scale(0.9, 0.9) translateY(4%);
+  }
+  4% {
+    transform: scale(1.3, 0.8) translateY(7%);
+  }
+  6% {
+    transform: scale(0.8, 1.3) translateY(-5%);
+  }
+  8% {
+    transform: scale(1.1, 0.9) translateY(3%);
+  }
+  10% {
+    transform: scale(1, 1) translateY(0%);
+  }
+}
+
+@keyframes purupuru {
+  0% {
+    transform: scale(1, 1) translate(50%, 0%);
+    @media screen and (max-width: 767px) {
+      transform: scale(1, 1) translate(-50%, 0%);
+    }
+  }
+  2% {
+    transform: scale(1, 1.06) translate(50%, -4%) skew(6deg, 0deg);
+    @media screen and (max-width: 767px) {
+      transform: scale(1, 1.06) translate(-50%, -4%) skew(6deg, 0deg);
+    }
+  }
+  4% {
+    transform: scale(1, 0.94) translate(50%, 4%) skew(-6deg, 0deg);
+    @media screen and (max-width: 767px) {
+      transform: scale(1, 0.94) translate(-50%, 4%) skew(-6deg, 0deg);
+    }
+  }
+  6% {
+    transform: scale(1, 1.03) translate(50%, -2%) skew(-3deg, 0deg);
+    @media screen and (max-width: 767px) {
+      transform: scale(1, 1.03) translate(-50%, -2%) skew(-3deg, 0deg);
+    }
+  }
+  8% {
+    transform: scale(1, 0.97) translate(50%, 2%) skew(3deg, 0deg);
+    @media screen and (max-width: 767px) {
+      transform: scale(1, 0.97) translate(-50%, 2%) skew(3deg, 0deg);
+    }
+  }
+  10% {
+    transform: scale(1, 1) translate(50%, 0%);
+    @media screen and (max-width: 767px) {
+      transform: scale(1, 1) translate(-50%, 0%);
+    }
+  }
+}
+
+@keyframes purupuru2 {
+  0% {
+    transform: scale(1, 1) translateX(30%, 70%);
+  }
+  2% {
+    transform: scale(1, 1.06) translate(30%, 66%) skew(6deg, 0deg);
+  }
+  4% {
+    transform: scale(1, 0.94) translate(30%, 74%) skew(-6deg, 0deg);
+  }
+  6% {
+    transform: scale(1, 1.03) translate(30%, 68%) skew(-3deg, 0deg);
+  }
+  8% {
+    transform: scale(1, 0.97) translate(30%, 72%) skew(3deg, 0deg);
+  }
+  10% {
+    transform: scale(1, 1) translate(30%, 70%);
   }
 }
