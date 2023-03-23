@@ -27,6 +27,7 @@ import "swiper/css/pagination";
 import { Grid, Pagination } from "swiper";
 
 export default function Home() {
+  const [activeAbout0, setActiveAbout0] = useState(false);
   const [activeAbout1, setActiveAbout1] = useState(false);
   const [activeAbout2, setActiveAbout2] = useState(false);
   const [activeAbout3, setActiveAbout3] = useState(false);
@@ -49,10 +50,30 @@ export default function Home() {
         },
       });
 
+      gsap.to("#about00", {
+        scrollTrigger: {
+          trigger: "#about00",
+          start: "top 50%",
+          end: "bottom 10%",
+          onEnter: (self) => {
+            setActiveAbout0(true);
+          },
+          onLeave: (self) => {
+            setActiveAbout0(false);
+          },
+          onEnterBack: () => {
+            setActiveAbout0(true);
+          },
+          onLeaveBack: () => {
+            setActiveAbout0(false);
+          },
+        },
+      });
+
       gsap.to("#about01", {
         scrollTrigger: {
           trigger: "#about01",
-          start: "top 50%",
+          start: "top 10%",
           end: "bottom 10%",
           onEnter: (self) => {
             setActiveAbout1(true);
@@ -227,10 +248,15 @@ export default function Home() {
           {/* 横スクロール時の表示領域 */}
           <div id="aboutDisplay" className={`${cn.aboutDisplay}`}>
             <div
-              id="about01"
+              id="about00"
               className={`${cn.aboutIndividual} ${cn.fixedContentsWrap}  pos-r`}
             >
-              <div className={`${cn.topic1} ${activeAbout1 ? cn.active : ""}`}>
+              {/* 最初のトピック */}
+              <div
+                className={`${cn.topic0} ${
+                  activeAbout0 ? cn.active : ""
+                } pos-a`}
+              >
                 <div
                   className={`${cn.aboutText} fle-f fon4 fonSp5 spaS ws-n pos-a`}
                 >
@@ -244,9 +270,16 @@ export default function Home() {
                     ちがいは、たのしい！
                   </h1>
                 </div>
+              </div>
 
+              {/* 1つめのトピック */}
+              <div
+                className={`${cn.topic1} ${
+                  activeAbout1 ? cn.active : ""
+                } pos-a`}
+              >
                 <ScrollEffect
-                  className={`${cn.aboutDes}`}
+                  className={`${cn.aboutDes} pos-a`}
                   after={cn.aboutDesFade}
                 >
                   <h2 className={`fon3 fonSp3 lin-10`}>
@@ -404,6 +437,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <div id="about01" className={`${cn.aboutIndividual} pos-r`}></div>
 
             <div id="about02" className={`${cn.aboutIndividual} pos-r`}></div>
 

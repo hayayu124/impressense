@@ -12,6 +12,7 @@ export default function HowToTpic() {
   const [activeHowTo1, setActiveHowTo1] = useState(false);
   const [activeHowTo2, setActiveHowTo2] = useState(false);
   const [activeHowTo3, setActiveHowTo3] = useState(false);
+  const [activeHowTo4, setActiveHowTo4] = useState(false);
 
   useEffect(() => {
     const setAnimation = gsap.context(() => {
@@ -42,9 +43,6 @@ export default function HowToTpic() {
           },
           onEnterBack: () => {
             setActiveHowTo1(true);
-          },
-          onLeaveBack: () => {
-            setActiveHowTo1(false);
           },
         },
       });
@@ -77,14 +75,30 @@ export default function HowToTpic() {
           onEnter: (self) => {
             setActiveHowTo3(true);
           },
-          onLeave: (self) => {
-            setActiveHowTo3(false);
-          },
+
           onEnterBack: () => {
             setActiveHowTo3(true);
           },
           onLeaveBack: () => {
             setActiveHowTo3(false);
+          },
+        },
+      });
+
+      gsap.to("#howTo04", {
+        scrollTrigger: {
+          trigger: "#howTo04",
+          start: "top 10%",
+          end: "bottom 10%",
+          onEnter: (self) => {
+            setActiveHowTo4(true);
+          },
+
+          onEnterBack: () => {
+            setActiveHowTo4(true);
+          },
+          onLeaveBack: () => {
+            setActiveHowTo4(false);
           },
         },
       });
@@ -101,7 +115,7 @@ export default function HowToTpic() {
       <section id="howTo" className={`pos-r`}>
         <div id="howToDisplay" className={`${cn.howToInner}`}>
           <div
-            id="howTo1"
+            id="howTo01"
             className={`${cn.howToIndividual} ${cn.fixedContentsWrap} pos-r`}
           >
             {/* how to トピック1 */}

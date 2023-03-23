@@ -217,6 +217,15 @@
   }
 }
 
+.topic0 {
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  &.active {
+    opacity: 1;
+  }
+}
+
 .topic1 {
   opacity: 0;
   width: 100vw;
@@ -228,9 +237,9 @@
 
 .aboutText {
   justify-content: center;
-  top: 10%;
+  top: 45%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
   p {
     padding: 0 1.3em;
     @media screen and (max-width: 767px) {
@@ -240,16 +249,16 @@
 }
 
 .aboutTitle {
-  top: 12%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .aboutDes {
   width: 50%;
-  top: 60%;
+  top: 50%;
   left: 7%;
-  transform: translate(0, -50%);
+  transform: translateY(-50%);
   @media screen and (max-width: 767px) {
     width: 100%;
   }
